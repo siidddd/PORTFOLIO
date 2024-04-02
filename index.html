@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script
+      src="https://kit.fontawesome.com/aa8192111f.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeFromBlack {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .overlay-black {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+        margin: 0;
+        z-index: 1;
+        background-color: black;
+        animation: fadeFromBlack 1.5s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+        transition: z-index 1s 0.5s;
+      }
+
+      .overlay-black:focus-visible {
+        display: none;
+        z-index: -9;
+      }
+    </style>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <title>Manu Siddharth's ePortfolio</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="overlay-black"></div>
+    <nav class="navbar">
+      <a href="./index.html">
+        <div class="logo-container">
+          <h1>Manu Siddharth's ePortfolio</h1>
+        </div>
+      </a>
+      <!-- <div class="linkbar">
+        <div class="dropdown">
+          <a class="links dropbtn">
+            <i class="fa-solid fa-diagram-project"></i>&nbsp;Projects
+          </a>
+          <div class="project-menu">
+            <a href="https://c43-sar.github.io/java-intro-wiki">Java Wiki</a>
+            <a href="https://c43-sar.github.io/tkc-ml-proj">Book-Recsys</a>
+          </div> -->
+        </div>
+          <a href="https://github.com/siidddd" class="links">
+            <i class="fa-brands fa-github"></i>&nbsp;GitHub
+          </a>
+      </div>
+    </nav>
+    <div class="content">
+      <header class="header">
+        <h1>A PASSIONATE<span>WEB</span>DEVELOPER</h1>
+        <img src="./res/mtn-front.png" />
+      </header>
+      <main>
+        <h1 class="introText">Welcome to Manu Siddharth's ePortfolio</h1>
+        <!-- <h2>A Web Developer, Data Analyst and Engineering Student</h2> -->
+
+        <div class="typeAnimContainer">
+          <h2>
+            I am a<span class="typeAnim"></span>, and I keep learning new
+            stuff.
+          </h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit
+          sit, id obcaecati nam alias ipsum adipisci praesentium ducimus
+          repellat! Laudantium vel eum ratione quia neque architecto consequatur
+          dolore excepturi cum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+          perferendis corporis, praesentium delectus sunt fugit exercitationem
+          aliquid deleniti iste nihil esse pariatur accusantium? Aliquid, totam
+          vel modi maxime quam hic.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+          perferendis corporis, praesentium delectus sunt fugit exercitationem
+          aliquid deleniti iste nihil esse pariatur accusantium? Aliquid, totam
+          vel modi maxime quam hic.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+          perferendis corporis, praesentium delectus sunt fugit exercitationem
+          aliquid deleniti iste nihil esse pariatur accusantium? Aliquid, totam
+          vel modi maxime quam hic.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+          perferendis corporis, praesentium delectus sunt fugit exercitationem
+          aliquid deleniti iste nihil esse pariatur accusantium? Aliquid, totam
+          vel modi maxime quam hic.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+          perferendis corporis, praesentium delectus sunt fugit exercitationem
+          aliquid deleniti iste nihil esse pariatur accusantium? Aliquid, totam
+          vel modi maxime quam hic.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+          perferendis corporis, praesentium delectus sunt fugit exercitationem
+          aliquid deleniti iste nihil esse pariatur accusantium? Aliquid, totam
+          vel modi maxime quam hic.
+        </p>
+      </main>
+    </div>
+    <footer>
+      Photo by
+      <a
+        href="https://unsplash.com/@neom?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        >NEOM</a
+      >
+      on
+      <a
+        href="https://unsplash.com/photos/a-person-standing-on-top-of-a-mountain-at-sunset-uqAUg1zvMXQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        >Unsplash</a
+      >
+      <br />
+      <small>Website by Manu Siddharth. Hosted with ❤️ on GitHub.</small>
+      <br />
+      <small>
+        Best viewed on Chromium 115 or later. Animations might not be
+        supported on Firefox.
+      </small>
+    </footer>
+  </body>
+</html>

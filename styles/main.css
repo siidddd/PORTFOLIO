@@ -1,0 +1,902 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif&family=Saira+Semi+Condensed&display=swap");
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+@media all and (max-width: 400px) {
+  main {
+    padding: 2rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.project-menu {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  border-radius: 6px;
+  transition-duration: 0s !important;
+  transition-delay: 0ms !important;
+  font-weight: 500;
+  background: #313131d1;
+  width: max-content;
+}
+
+.project-menu a {
+  color: #efefef;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 6px;
+}
+
+.dropdown:hover .project-menu {
+  display: block;
+}
+
+.project-menu *:hover {
+  background-color: rgba(47, 79, 79, 0.818);
+}
+
+body,
+html {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  background: #313131;
+  color: #efefef;
+  padding: 0;
+  /* overflow-x: hidden; */
+}
+
+@keyframes navAnim {
+  from {
+    backdrop-filter: blur(0px);
+  }
+  to {
+    backdrop-filter: blur(1vh);
+  }
+}
+
+.navbar {
+  z-index: 7;
+  /* background-color: #333; */
+  /* Dark background color */
+  /*padding: 20px; /* Add some padding */
+  height: 50px; /* Set the height of the navbar */
+  width: 100%; /* Set the width of the navbar */
+  position: fixed; /* Make it stick to the top
+    /* top: 0;*/
+  grid-area: navbar;
+  display: flex; /* Use flexbox to align the items */
+  align-items: center; /* Center the items vertically */
+  justify-content: space-around; /* Distribute the items evenly */
+  view-timeline-name: --header;
+  view-timeline-axis: block;
+  animation: auto linear navAnim both;
+  /* animation-timeline: view(); */
+  animation-timeline: --header;
+  animation-range: exit 0% exit 100%;
+}
+
+.logo-container,
+.links {
+  opacity: 0;
+  animation: fadeIn 0.7s ease-in-out 1.5s 1 normal forwards;
+}
+
+/* Style the navbar title */
+.navbar h1 {
+  /* padding-left: 10px; */
+  color: #efefef;
+  /*font-size: min(5vw, 1.2em);*/
+  font-size: large;
+  text-align: left;
+  font-weight: 600;
+}
+
+.navbar a {
+  text-decoration: none; /* Remove underline */
+  height: 100%;
+}
+
+/* Style the navbar links */
+.links {
+  display: inline-block; /* Display the links inline */
+  color: #efefef; /* White text color */
+  background: none;
+  padding: 8px;
+  /* overflow: hidden;  */
+  text-decoration: none; /* Remove underline  */
+  height: 100%;
+  font-weight: 500;
+}
+
+/* Change the color of links on hover */
+.links:hover {
+  background-color: lightcyan; /* Light gray background color */
+  color: rgb(66, 66, 66); /* Black text color */
+  /* font-weight: 500; */
+  border-radius: 8px;
+}
+
+.content {
+  box-sizing: border-box;
+}
+
+/* Disappearing Scroller Header inspired by Dudley Storey's pen */
+/* https://codepen.io/dudleystorey/pen/yaWzzR */
+
+header {
+  background-image: url(https://c43-sar.github.io/res/neom-uqAUg1zvMXQ-unsplash.jpg);
+  padding-top: 61.73333333%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Saira Semi Condensed";
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+header img {
+  position: absolute;
+  top: 0;
+  /* bottom: 0; */
+  right: 0;
+  /* height: 100%; */
+  /* padding-bottom: 0; */
+  /* width: 45.8%; */
+  width: 43.438%;
+}
+
+header h1 {
+  position: fixed;
+  top: 1.5em;
+  right: 8vw;
+  font-size: 5vw;
+  line-height: 0.9;
+  margin-top: 0;
+  /* opacity: 0; */
+  text-align: center;
+  animation: auto linear fadeOut both;
+  animation-timeline: view();
+  animation-range: exit 0% exit 100%;
+  /* animation-delay: 2s; */
+  /* -moz-animation: fadeOut; */
+  /* -moz-animation-delay: 2s; */
+  /* -o-animation: fadeOut; */
+  /* -o-animation-delay: 2s; */
+  /* -webkit-animation: fadeOut; */
+  /* -webkit-animation-delay: 2s; */
+}
+
+/* header h1:active {
+  animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+} */
+
+header h1 span {
+  display: block;
+  font-size: 14vw;
+}
+
+main {
+  background: #3f3c3c;
+  position: relative;
+  border: 1px solid #3f3c3c;
+  /* font-family: 'IBM Plex Sans'; */
+  /* font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+  font-size: 1.4rem;
+  padding: 1.5rem 12.5%;
+  line-height: 1.6;
+}
+
+main p {
+  text-align: justify;
+}
+
+* a {
+  color: lightblue;
+  text-decoration: none;
+}
+
+* a:visited {
+  color: lightslategray;
+  text-decoration: none;
+}
+
+/* Chromium-exclusive CSS-only Reveal animation */
+/* https://developer.chrome.com/articles/scroll-driven-animations/ */
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0% 100% 0% 0%);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+.introText {
+  /* view-timeline-name: --introText;
+  view-timeline-axis: block; */
+  animation: auto linear reveal both;
+  animation-timeline: view();
+  /* animation-timeline: --introText; */
+  animation-range: entry 25% cover 50%;
+}
+
+footer {
+  font-family: InterVariable, "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: smaller;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Contact-list inspired in&out animation */
+/* https://developer.chrome.com/articles/scroll-driven-animations/ */
+
+@keyframes animate-in-and-out {
+  entry 0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  entry 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  exit 0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  exit 100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+main * {
+  animation: linear animate-in-and-out;
+  animation-timeline: view();
+}
+
+/* Inspired by: Typed.scss from https://codepen.io/brandonmcconnell/pen/bZqGdw */
+/* https://sass-lang.com/playground/#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 */
+@keyframes typed {
+  /* string 1, char 1 */
+  0%,
+  0.467164794% {
+    content: "B";
+  }
+  /* string 1, char 2 */
+  0.468164794%,
+  0.935329588% {
+    content: "B.";
+  }
+  /* string 1, char 3 */
+  0.936329588%,
+  1.403494382% {
+    content: "B. ";
+  }
+  /* string 1, char 4 */
+  1.404494382%,
+  1.871659176% {
+    content: "B. T";
+  }
+  /* string 1, char 5 */
+  1.872659176%,
+  2.33982397% {
+    content: "B. Te";
+  }
+  /* string 1, char 6 */
+  2.34082397%,
+  2.807988764% {
+    content: "B. Tec";
+  }
+  /* string 1, char 7 */
+  2.808988764%,
+  3.2761535581% {
+    content: "B. Tech";
+  }
+  /* string 1, char 8 */
+  3.2771535581%,
+  3.7443183521% {
+    content: "B. Tech ";
+  }
+  /* string 1, char 9 */
+  3.7453183521%,
+  4.2124831461% {
+    content: "B. Tech S";
+  }
+  /* string 1, char 10 */
+  4.2134831461%,
+  4.6806479401% {
+    content: "B. Tech St";
+  }
+  /* string 1, char 11 */
+  4.6816479401%,
+  5.1488127341% {
+    content: "B. Tech Stu";
+  }
+  /* string 1, char 12 */
+  5.1498127341%,
+  5.6169775281% {
+    content: "B. Tech Stud";
+  }
+  /* string 1, char 13 */
+  5.6179775281%,
+  6.0851423221% {
+    content: "B. Tech Stude";
+  }
+  /* string 1, char 14 */
+  6.0861423221%,
+  6.5533071161% {
+    content: "B. Tech Studen";
+  }
+  /* string 1, char 15 */
+  6.5543071161%,
+  16.7592996255% {
+    content: "B. Tech Student";
+  }
+  /* string 1, char 16 */
+  16.7602996255%,
+  17.1338314607% {
+    content: "B. Tech Studen";
+  }
+  /* string 1, char 17 */
+  17.1348314607%,
+  17.5083632959% {
+    content: "B. Tech Stude";
+  }
+  /* string 1, char 18 */
+  17.5093632959%,
+  17.8828951311% {
+    content: "B. Tech Stud";
+  }
+  /* string 1, char 19 */
+  17.8838951311%,
+  18.2574269663% {
+    content: "B. Tech Stu";
+  }
+  /* string 1, char 20 */
+  18.2584269663%,
+  18.6319588015% {
+    content: "B. Tech St";
+  }
+  /* string 1, char 21 */
+  18.6329588015%,
+  19.0064906367% {
+    content: "B. Tech S";
+  }
+  /* string 1, char 22 */
+  19.0074906367%,
+  19.3810224719% {
+    content: "B. Tech ";
+  }
+  /* string 1, char 23 */
+  19.3820224719%,
+  19.7555543071% {
+    content: "B. Tech";
+  }
+  /* string 1, char 24 */
+  19.7565543071%,
+  20.1300861423% {
+    content: "B. Tec";
+  }
+  /* string 1, char 25 */
+  20.1310861423%,
+  20.5046179775% {
+    content: "B. Te";
+  }
+  /* string 1, char 26 */
+  20.5056179775%,
+  20.8791498127% {
+    content: "B. T";
+  }
+  /* string 1, char 27 */
+  20.8801498127%,
+  21.2536816479% {
+    content: "B. ";
+  }
+  /* string 1, char 28 */
+  21.2546816479%,
+  21.6282134831% {
+    content: "B.";
+  }
+  /* string 1, char 29 */
+  21.6292134831%,
+  22.0027453184% {
+    content: "B";
+  }
+  /* string 1, char 30 */
+  22.0037453184%,
+  26.6843932584% {
+    content: "​";
+  }
+  /* string 2, char 1 */
+  26.6853932584%,
+  27.1525580524% {
+    content: "W";
+  }
+  /* string 2, char 2 */
+  27.1535580524%,
+  27.6207228464% {
+    content: "We";
+  }
+  /* string 2, char 3 */
+  27.6217228464%,
+  28.0888876404% {
+    content: "Web";
+  }
+  /* string 2, char 4 */
+  28.0898876404%,
+  28.5570524345% {
+    content: "Web ";
+  }
+  /* string 2, char 5 */
+  28.5580524345%,
+  29.0252172285% {
+    content: "Web D";
+  }
+  /* string 2, char 6 */
+  29.0262172285%,
+  29.4933820225% {
+    content: "Web De";
+  }
+  /* string 2, char 7 */
+  29.4943820225%,
+  29.9615468165% {
+    content: "Web Dev";
+  }
+  /* string 2, char 8 */
+  29.9625468165%,
+  30.4297116105% {
+    content: "Web Deve";
+  }
+  /* string 2, char 9 */
+  30.4307116105%,
+  30.8978764045% {
+    content: "Web Devel";
+  }
+  /* string 2, char 10 */
+  30.8988764045%,
+  31.3660411985% {
+    content: "Web Develo";
+  }
+  /* string 2, char 11 */
+  31.3670411985%,
+  31.8342059925% {
+    content: "Web Develop";
+  }
+  /* string 2, char 12 */
+  31.8352059925%,
+  32.3023707865% {
+    content: "Web Develope";
+  }
+  /* string 2, char 13 */
+  32.3033707865%,
+  42.5083632959% {
+    content: "Web Developer";
+  }
+  /* string 2, char 14 */
+  42.5093632959%,
+  42.8828951311% {
+    content: "Web Develope";
+  }
+  /* string 2, char 15 */
+  42.8838951311%,
+  43.2574269663% {
+    content: "Web Develop";
+  }
+  /* string 2, char 16 */
+  43.2584269663%,
+  43.6319588015% {
+    content: "Web Develo";
+  }
+  /* string 2, char 17 */
+  43.6329588015%,
+  44.0064906367% {
+    content: "Web Devel";
+  }
+  /* string 2, char 18 */
+  44.0074906367%,
+  44.3810224719% {
+    content: "Web Deve";
+  }
+  /* string 2, char 19 */
+  44.3820224719%,
+  44.7555543071% {
+    content: "Web Dev";
+  }
+  /* string 2, char 20 */
+  44.7565543071%,
+  45.1300861423% {
+    content: "Web De";
+  }
+  /* string 2, char 21 */
+  45.1310861423%,
+  45.5046179775% {
+    content: "Web D";
+  }
+  /* string 2, char 22 */
+  45.5056179775%,
+  45.8791498127% {
+    content: "Web ";
+  }
+  /* string 2, char 23 */
+  45.8801498127%,
+  46.2536816479% {
+    content: "Web";
+  }
+  /* string 2, char 24 */
+  46.2546816479%,
+  46.6282134831% {
+    content: "We";
+  }
+  /* string 2, char 25 */
+  46.6292134831%,
+  47.0027453184% {
+    content: "W";
+  }
+  /* string 2, char 26 */
+  47.0037453184%,
+  51.6843932584% {
+    content: "​";
+  }
+  /* string 3, char 1 */
+  51.6853932584%,
+  52.1525580524% {
+    content: "D";
+  }
+  /* string 3, char 2 */
+  52.1535580524%,
+  52.6207228464% {
+    content: "Da";
+  }
+  /* string 3, char 3 */
+  52.6217228464%,
+  53.0888876404% {
+    content: "Dat";
+  }
+  /* string 3, char 4 */
+  53.0898876404%,
+  53.5570524345% {
+    content: "Data";
+  }
+  /* string 3, char 5 */
+  53.5580524345%,
+  54.0252172285% {
+    content: "Data ";
+  }
+  /* string 3, char 6 */
+  54.0262172285%,
+  54.4933820225% {
+    content: "Data A";
+  }
+  /* string 3, char 7 */
+  54.4943820225%,
+  54.9615468165% {
+    content: "Data An";
+  }
+  /* string 3, char 8 */
+  54.9625468165%,
+  55.4297116105% {
+    content: "Data Ana";
+  }
+  /* string 3, char 9 */
+  55.4307116105%,
+  55.8978764045% {
+    content: "Data Anal";
+  }
+  /* string 3, char 10 */
+  55.8988764045%,
+  56.3660411985% {
+    content: "Data Analy";
+  }
+  /* string 3, char 11 */
+  56.3670411985%,
+  56.8342059925% {
+    content: "Data Analys";
+  }
+  /* string 3, char 12 */
+  56.8352059925%,
+  67.0401985019% {
+    content: "Data Analyst";
+  }
+  /* string 3, char 13 */
+  67.0411985019%,
+  67.4147303371% {
+    content: "Data Analys";
+  }
+  /* string 3, char 14 */
+  67.4157303371%,
+  67.7892621723% {
+    content: "Data Analy";
+  }
+  /* string 3, char 15 */
+  67.7902621723%,
+  68.1637940075% {
+    content: "Data Anal";
+  }
+  /* string 3, char 16 */
+  68.1647940075%,
+  68.5383258427% {
+    content: "Data Ana";
+  }
+  /* string 3, char 17 */
+  68.5393258427%,
+  68.9128576779% {
+    content: "Data An";
+  }
+  /* string 3, char 18 */
+  68.9138576779%,
+  69.2873895131% {
+    content: "Data A";
+  }
+  /* string 3, char 19 */
+  69.2883895131%,
+  69.6619213483% {
+    content: "Data ";
+  }
+  /* string 3, char 20 */
+  69.6629213483%,
+  70.0364531835% {
+    content: "Data";
+  }
+  /* string 3, char 21 */
+  70.0374531835%,
+  70.4109850187% {
+    content: "Dat";
+  }
+  /* string 3, char 22 */
+  70.4119850187%,
+  70.7855168539% {
+    content: "Da";
+  }
+  /* string 3, char 23 */
+  70.7865168539%,
+  71.1600486891% {
+    content: "D";
+  }
+  /* string 3, char 24 */
+  71.1610486891%,
+  75.8416966292% {
+    content: "​";
+  }
+  /* string 4, char 1 */
+  /* 75.8426966292%,
+  76.3098614232% {
+    content: "U";
+  } */
+  /* string 4, char 2 */
+  /* 76.3108614232%,
+  76.7780262172% {
+    content: "Up";
+  } */
+  /* string 4, char 3 */
+  /* 76.7790262172%,
+  77.2461910112% {
+    content: "Upc";
+  }
+  /* string 4, char 4 */
+  /* 77.2471910112%,
+  77.7143558052% {
+    content: "Upco";
+  }
+  /* string 4, char 5 */
+  /* 77.7153558052%,
+  78.1825205993% {
+    content: "Upcom";
+  }  */
+  /* string 4, char 6 */
+  /* 78.1835205993%,
+  78.6506853933% {
+    content: "Upcomi";
+  } */
+  /* string 4, char 7 */
+  /* 78.6516853933%,
+  79.1188501873% {
+    content: "Upcomin";
+  } */
+  /* string 4, char 8 */
+  /* 79.1198501873%,
+  79.5870149813% {
+    content: "Upcoming";
+  } */
+  /* string 4, char 9 */
+  /* 79.5880149813%,
+  80.0551797753% {
+    content: "Upcoming ";
+  } */
+  /* string 4, char 10 */
+  /* 80.0561797753%,
+  80.5233445693% {
+    content: "Upcoming S";
+  } */
+  /* string 4, char 11 */
+  /* 80.5243445693%,
+  80.9915093633% {
+    content: "Upcoming SD";
+  } */
+  /* string 4, char 12 */
+  /* 80.9925093633%,
+  91.1975018727% {
+    content: "Upcoming SDE";
+  } */
+  /* string 4, char 13 */
+  /* 91.1985018727%,
+  91.5720337079% {
+    content: "Upcoming SD";
+  } */
+  /* string 4, char 14 */
+  /* 91.5730337079%,
+  91.9465655431% {
+    content: "Upcoming S";
+  } */
+  /* string 4, char 15 */
+  /* 91.9475655431%,
+  92.3210973783% {
+    content: "Upcoming ";
+  } */
+  /* string 4, char 16 */
+  /* 92.3220973783%,
+  92.6956292135% {
+    content: "Upcoming";
+  } */
+  /* string 4, char 17 */
+  /* 92.6966292135%,
+  93.0701610487% {
+    content: "Upcomin";
+  } */
+  /* string 4, char 18 */
+  /* 93.0711610487%,
+  93.4446928839% {
+    content: "Upcomi";
+  } */
+  /* string 4, char 19 */
+  /* 93.4456928839%,
+  93.8192247191% {
+    content: "Upcom";
+  } */
+  /* string 4, char 20 */
+  /* 93.8202247191%,
+  94.1937565543% {
+    content: "Upco";
+  } */
+  /* string 4, char 21 */
+  /* 94.1947565543%,
+  94.5682883895% {
+    content: "Upc";
+  } */
+  /* string 4, char 22 */
+  /* 94.5692883895%,
+  94.9428202247% {
+    content: "Up";
+  } */
+  /* string 4, char 23 */
+  /* 94.9438202247%,
+  95.3173520599% {
+    content: "U";
+  } */
+  /* string 4, char 24 */
+  95.3183520599%,
+  100% {
+    content: "​";
+  }
+}
+
+@keyframes beam-blink {
+  75% {
+    border-color: transparent;
+  }
+}
+
+.typeAnimContainer {
+  backface-visibility: hidden;
+  height: 100%;
+  display: inline;
+  animation: auto linear fadeIn both;
+  animation-timeline: view();
+  animation-range: contain 30% contain 40%;
+}
+
+.typeAnim {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* background-color: #000; */
+  background-color: inherit;
+  padding-left: 2vw;
+  padding-top: 1em;
+  /* background-image: radial-gradient(rgba(255, 255, 255, 0.125), rgba(255, 255, 255, 0)), linear-gradient(to bottom, #000, #000 2px, #111 3px);
+  background-repeat: repeat-y;
+  background-position: center center;
+  background-size: cover, 100% 3px; */
+  /* font-size: calc(1em + 1.1vw); */
+  /* font-size: larger; */
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  font-weight: 400;
+  color: lightblue;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.typeAnim::after {
+  content: "​";
+  position: relative;
+  /* top: -13px; */
+  display: inline-block;
+  padding-right: 3px;
+  padding-right: calc(3px + 0.1vw);
+  border-right: 10px solid rgba(83, 130, 202, 0.75);
+  border-right: calc(1.1vw + 4px) solid rgba(83, 130, 202, 0.75);
+  text-shadow: 0 0 5px rgba(83, 130, 202, 0.75);
+  white-space: nowrap;
+  animation: typed 21.36s linear 1s infinite, beam-blink 1s infinite;
+}
+
+.typeAnimContainer {
+  @media (max-width: 575px) {
+    .typeAnim::after {
+      top: -33px;
+    }
+  }
+}
+
+/* .typeAnim::before {
+  content: "4 strings / 52 chars / 21.36s duration";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 3px 0;
+  background: #00f;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.7px;
+  white-space: pre-wrap;
+} */
+/* @media (max-width: 575px) {
+  .typeAnim::before {
+    content: "4 strings \a 52 chars \a 21.36s duration";
+  }
+} */
